@@ -18,6 +18,7 @@ To set up locally
 
 ### Create your env.list file
 Create your own env.list file with the required params
+
     MYSQL_ROOT_PASSWORD={MySQL root password of your choice}
     DB_CONTAINER_NAME=db
 
