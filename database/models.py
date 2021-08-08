@@ -38,4 +38,13 @@ class Products(Base):
   def __repr__(self):
     return "{0} - {1}".format(self.sku, self.name)
 
+class ProductsNumber(Base):
+  __tablename__ = 'ProductsNumber'
+  
+  name = db.Column(db.String(length=500), primary_key=True)
+  noofproducts = db.Column(db.Integer())
+
+  def __repr__(self):
+    return "{0} - {1}".format(self.name, self.noofproducts)
+
 Base.metadata.create_all(engine)

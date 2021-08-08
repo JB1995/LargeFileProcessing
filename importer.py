@@ -10,6 +10,9 @@ class Importer:
         self.basewriter = BaseWriter(self.db)
 
     def go(self):
+        self.importProducts()
+    
+    def importProducts(self):
         data = pandas.read_csv('dataset/products.csv')
         print (len(data), 'Total records found.')
         starttime = datetime.now()
@@ -19,4 +22,4 @@ class Importer:
         self.basewriter.commit()
         endtime = datetime.now()
         print("\n Import completed at: ", endtime, "\n******************************")
-        print("\n Total table load time: ", endtime-starttime)        
+        print("\n Total table load time: ", endtime-starttime)
