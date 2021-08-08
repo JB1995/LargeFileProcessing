@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  demo:
+    image: demo:latest
+    build: .
+    volumes:
+      - .:/app:delegated
+      - python_history:/root/.ipython
+    env_file:
+      - env.list
+    depends_on:
+      - db
+  db:
+    image: mysql:latest
+    tty : true
+    command: --default-authentication-plugin=caching_sha2_password
+    volumes:
+      - demo_db:/var/lib/mysql
+    ports:
+      - 3306:3306
+    env_file:
+      - env.list
+volumes:
+  python_history:
+  demo_db:

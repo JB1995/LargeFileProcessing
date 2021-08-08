@@ -6,8 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # Defining database connections
 class DB:
     def __init__(self):
-        # self.engine = db.create_engine('mysql+mysqlconnector://root:'+os.environ['MYSQL_ROOT_PASSWORD']+'@'+os.environ['DB_CONTAINER_NAME']+'/metrics')
-        self.engine = db.create_engine('mysql+mysqlconnector://Dealersocket:metrics123@localhost:3307/demo')
+        self.engine = db.create_engine('mysql+mysqlconnector://root:'+os.environ['MYSQL_ROOT_PASSWORD']+'@'+os.environ['DB_CONTAINER_NAME']+'/demo')
         self.conn = self.engine.connect()
         
         Session = db.orm.sessionmaker()

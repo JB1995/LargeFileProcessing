@@ -10,7 +10,7 @@ class Importer:
         self.basewriter = BaseWriter(self.db)
 
     def go(self):
-        data = pandas.read_csv('dataset\products.csv')
+        data = pandas.read_csv('dataset/products.csv')
         print (len(data), 'Total records found.')
         starttime = datetime.now()
         print("\n******************************\n Started loading data at: ", starttime)
